@@ -1,0 +1,13 @@
+#python virtual env.
+venv/
+.venv/
+
+#python chache
+__pycache__/
+*.pyc
+
+#log files
+*.log
+
+# SQLite database
+*.db
