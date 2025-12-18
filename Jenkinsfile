@@ -30,8 +30,7 @@ pipeline {
       steps {
         sh '''
             set -e
-            sudo mkdir -p "$DATA_DIR"
-            sudo chown -R $(id -u):$(id -g) "$DATA_DIR"
+            mkdir -p "$DATA_DIR"
 
             docker stop "$APP_NAME" 2>/dev/null || true
             docker rm "$APP_NAME" 2>/dev/null || true
