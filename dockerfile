@@ -2,12 +2,12 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY requirements.txt ./
+COPY backend/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY app.py init_db.py ./
-COPY templates/ templates/
-COPY ../scripts/run.sh ./
+COPY backend/app.py backend/init_db.py ./
+COPY backend/templates/ templates/
+COPY scripts/run.sh ./
 
 RUN chmod +x run.sh
 
