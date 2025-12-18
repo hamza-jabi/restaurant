@@ -11,7 +11,7 @@ then
     then
         mkdir data
     fi
-    python init_db.py
+    python3 init_db.py
 fi
 
-python app.py
+python3 app.py
