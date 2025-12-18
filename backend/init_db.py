@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect("restaurants.db")
+conn = sqlite3.connect("data/restaurants.db")
 cur = conn.cursor()
 
 cur.execute("""

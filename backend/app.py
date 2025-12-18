@@ -4,7 +4,7 @@ import sqlite3
 app = Flask(__name__)
 
 def get_db():
-    return sqlite3.connect("restaurants.db")
+    return sqlite3.connect("data/restaurants.db")
 
 @app.get("/")
 def home():

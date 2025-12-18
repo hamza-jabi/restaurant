@@ -1,6 +1,10 @@
 #python virtual env.
 venv/
 .venv/
+run_local.sh
+
+#marker file for dependencies installed
+.deps_installed
 
 #python chache
 __pycache__/
