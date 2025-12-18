@@ -6,7 +6,7 @@ pipeline {
     IMAGE    = "restaurant-app:latest"
     PORT     = "5000"          // change if your app uses another port
     HOSTPORT = "5000"            // external port for clients
-    DATA_DIR = "/var/restaurant-app/data"
+    DATA_DIR = "$PWD/data:/app/data"
   }
 
   stages {
@@ -33,7 +33,7 @@ pipeline {
             sudo mkdir -p "$DATA_DIR"
             sudo chown -R $(id -u):$(id -g) "$DATA_DIR"
 
-            docker stop "$$APP_NAME" 2>/dev/null || true
+            docker stop "$APP_NAME" 2>/dev/null || true
             docker rm "$APP_NAME" 2>/dev/null || true
 
             docker run -d --name "$APP_NAME" --restart unless-stopped -p "$HOSTPORT:$PORT" -v "$DATA_DIR":/app/data -v "$IMAGE"
