@@ -35,7 +35,7 @@ pipeline {
             docker stop "$APP_NAME" 2>/dev/null || true
             docker rm "$APP_NAME" 2>/dev/null || true
 
-            docker run -d --name "$APP_NAME" --restart unless-stopped -p "$HOSTPORT:$PORT" -v "$DATA_DIR":/app/data -v "$IMAGE"
+            docker run -d --name "$APP_NAME" --restart unless-stopped -p "$HOSTPORT:$PORT" -v "$DATA_DIR":/app/data "$IMAGE"
 
             docker ps --filter "name=$APP_NAME"
         '''
