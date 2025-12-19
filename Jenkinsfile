@@ -6,7 +6,7 @@ pipeline {
     IMAGE    = "restaurant-app:latest"
     PORT     = "5000"         
     HOSTPORT = "5000"            
-    DATA_DIR = "$PWD/data"
+    DATA_DIR = "$PWD/data"    //this will be in jenkins workspace /var/lib/jenkins/data
     
   }
 
