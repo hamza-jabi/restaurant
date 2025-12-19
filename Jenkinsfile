@@ -4,9 +4,10 @@ pipeline {
   environment {
     APP_NAME = "restaurant-app"
     IMAGE    = "restaurant-app:latest"
-    PORT     = "5000"          // change if your app uses another port
-    HOSTPORT = "5000"            // external port for clients
+    PORT     = "5000"         
+    HOSTPORT = "5000"            
     DATA_DIR = "$PWD/data"
+    
   }
 
   stages {
